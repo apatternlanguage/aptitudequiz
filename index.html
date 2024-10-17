@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resiliency Aptitude Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        h1, h2 {
+            font-family: 'Helvetica Neue', sans-serif;
+            color: #2c3e50;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            margin-top: 40px;
+        }
+
+        .intro, .scoring, .ranking {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .quiz-section {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type=range] {
+            width: 70%;
+            margin: 10px 0;
+        }
+
+        .slider-value {
+            font-size: 0.9em;
+            color: #555;
+            display: inline-block;
+            margin-left: 10px;
+        }
+
+        .result-section {
+            margin-top: 30px;
+            font-size: 1.2em;
+            text-align: center;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+        .center-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        </style>
+</head>
+<body>
+        <div style="text-align: center;"><img src="fulllogo.png" alt="Logo" style="max-width: 200px; margin-bottom: 20px;"></div>
+    <h1>Assessing Resiliency: Aptitude Quiz</h1>
+    <div class="intro">
+        <p>The following tool is an adaptation of Ben Falk's "The Resilient Farm and Homestead." While assessments are always inherently subjective and incomplete, they serve as valuable tools for gaining insight into our ability to live a resilient lifestyle. This particular assessment aims to identify both strengths, where one might support others most effectively, and weaknesses, where growth opportunities are most accessible. Focusing on our weakest links is often the quickest path to improving the overall function of our personal systems. Given that our time and energy are limited, it is essential to use them wisely.</p>
+        <p>Please remember that the results of the following assessment are not meant to be taken literally, but rather to reveal patterns. As you work through the test, consider which areas you excel in and where you might need more support. Reflect on how your strengths could benefit those around you—how can you share your skills? And where could you seek learning from others? This assessment emphasizes not just hard skills, but also the aptitude to develop them when needed. It is worth noting that these skills are framed within the context of the author’s lifestyle—a rural, cold-climate homestead. While the tool is applicable in other settings, some modifications may be required. Think of it as a starting point for creating your own customized assessment.</p>
+    </div>
+    <div class="ranking">
+        <h2>Ranking (Out of a Possible 4,725 Points)</h2>
+        <ul>
+            <li>4,000+: Likely adaptable to major change, likely an asset to any community, should likely be facilitating other people’s learning and sharing skills and resources.</li>
+            <li>3,000–3,999: Probably adaptable to changing conditions, a likely asset to most communities with much to share.</li>
+            <li>2,000–2,999: Adaptive patterns to work from, positioned to become highly resilient.</li>
+            <li>1,000–1,999: Some resilient tendencies to build on.</li>
+            <li>0–999: Average—a liability until major changes are undertaken.</li>
+        </ul>
+    </div>
+    <div class="scoring">
+        <h2>Scoring Your Evaluation</h2>
+        <p>Scoring Your Evaluation:</p>
+        <p>1. Read the question and reflect on your level of competence in the skill described.</p>
+        <p>2. Assign a score that matches your competence level. This part is subjective, so use your best judgment. For example, if the skill is "Can you weld?" with a possible 10 points: if you’ve only tried welding once and could manage a basic, albeit rough, weld, score yourself between 3 and 5. If you can weld satisfactorily with basic tools, score a 10. If you are highly skilled and can weld proficiently using a variety of equipment, give yourself a 15.</p>
+    </div>
+    <div class="title-section"><div style="text-align: center;">
+        <h1>The Test</h1>
+        <p>Please answer the following questions in each skill area:</p>
+      </div>
+    </div>
+
+    <div class="quiz-section">
+        
+        <h2>Social-Economic</h2>
+        <label for="score1">I am useful to neighbors—I make or do something they need: (up to 200 points)</label>
+        <input type="range" id="score1" name="score1" min="0" max="200" value="0" oninput="updateScore()"> <span class="slider-value" id="value1">0</span>
+        
+        <label for="score2">I can generate a surplus: (up to 50 points)</label>
+        <input type="range" id="score2" name="score2" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value2">0</span>
+        
+        <label for="score3">I am well liked: (up to 150 points)</label>
+        <input type="range" id="score3" name="score3" min="0" max="150" value="0" oninput="updateScore()"> <span class="slider-value" id="value3">0</span>
+        
+        <label for="score4">I am a long-time resident of this area with many social connections and am well liked here: (up to 50 points)</label>
+        <input type="range" id="score4" name="score4" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value4">0</span>
+        
+        <label for="score5">I am financially well off, without debt, can purchase most tools or other resources I need: (up to 200 points)</label>
+        <input type="range" id="score5" name="score5" min="0" max="200" value="0" oninput="updateScore()"> <span class="slider-value" id="value5">0</span>
+        
+        <label for="score6">I can organize people well and/or work well within a group setting: (up to 200 points)</label>
+        <input type="range" id="score6" name="score6" min="0" max="200" value="0" oninput="updateScore()"> <span class="slider-value" id="value6">0</span>
+    </div>
+
+    <div class="quiz-section">
+        <h2>Personal and Psychological</h2>
+        <h3>Aptitude</h3>
+        <label for="score7">I can quickly figure out solutions to challenges I have never been trained in and enjoy doing so: (up to 500 points)</label>
+        <input type="range" id="score7" name="score7" min="0" max="500" value="0" oninput="updateScore()"> <span class="slider-value" id="value7">0</span>
+
+        <h3>Attitude</h3>
+        <label for="score8">I have a positive outlook in difficult situations and experience in adverse conditions which demand calm, calculated, effective action in the face of emergency: (up to 150 points)</label>
+        <input type="range" id="score8" name="score8" min="0" max="150" value="0" oninput="updateScore()"> <span class="slider-value" id="value8">0</span>
+        
+        <label for="score9">I do not give up when encountering difficulty: (up to 100 points)</label>
+        <input type="range" id="score9" name="score9" min="0" max="100" value="0" oninput="updateScore()"> <span class="slider-value" id="value9">0</span>
+        
+        <label for="score10">I am patient when it comes to dealing with challenges: (up to 50 points)</label>
+        <input type="range" id="score10" name="score10" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value10">0</span>
+        
+        <label for="score11">I enjoy challenging situations: (up to 50 points)</label>
+        <input type="range" id="score11" name="score11" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value11">0</span>
+        
+        <label for="score12">I am confident, believe in myself, and act decisively and with poise: (up to 200 points)</label>
+        <input type="range" id="score12" name="score12" min="0" max="200" value="0" oninput="updateScore()"> <span class="slider-value" id="value12">0</span>
+        
+        <label for="score13">I know what I do not know: (up to 200 points)</label>
+        <input type="range" id="score13" name="score13" min="0" max="200" value="0" oninput="updateScore()"> <span class="slider-value" id="value13">0</span>
+
+        <h3>Mental Health</h3>
+        <label for="score14">I am in sound mental health, stable, and happy; I enjoy my life, like to engage with others: (up to 300 points)</label>
+        <input type="range" id="score14" name="score14" min="0" max="300" value="0" oninput="updateScore()"> <span class="slider-value" id="value14">0</span>
+    </div>
+
+    <div class="quiz-section">
+        <h2>Food, Fuel, and Heat</h2>
+        <label for="score15">I can do everything needed to heat a home efficiently with minimal wood: (up to 50 points)</label>
+        <input type="range" id="score15" name="score15" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value15">0</span>
+        
+        <label for="score16">I can haul wood from woodlot to house with on-site resources: (up to 20 points)</label>
+        <input type="range" id="score16" name="score16" min="0" max="20" value="0" oninput="updateScore()"> <span class="slider-value" id="value16">0</span>
+        
+        <label for="score17">I can process firewood with an ax: (up to 20 points)</label>
+        <input type="range" id="score17" name="score17" min="0" max="20" value="0" oninput="updateScore()"> <span class="slider-value" id="value17">0</span>
+        
+        <label for="score18">I can make and tend to a fire: (up to 20 points)</label>
+        <input type="range" id="score18" name="score18" min="0" max="20" value="0" oninput="updateScore()"> <span class="slider-value" id="value18">0</span>
+        
+        <label for="score19">I can cook on a woodstove: (up to 20 points)</label>
+        <input type="range" id="score19" name="score19" min="0" max="20" value="0" oninput="updateScore()"> <span class="slider-value" id="value19">0</span>
+        
+        
+
+        <label for="score21">I can clean a chimney: (up to 10 points)</label>
+        <input type="range" id="score21" name="score21" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value21">0</span>
+       
+        <label for="score21">I can install a woodstove and chimney: (up to 10 points)</label>
+        <input type="range" id="score21" name="score21" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value21">0</span>
+        
+        <label for="score22">I can stack and cover wood very well: (up to 10 points)</label>
+        <input type="range" id="score22" name="score22" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value22">0</span>
+        
+        <label for="score23">I am able to grow vegetables, grains, fruits, nuts, pulses, and meat: (up to 50 points)</label>
+        <input type="range" id="score23" name="score23" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value23">0</span>
+        
+        <label for="score24">I have a two-year supply of food each season: (up to 50 points)</label>
+        <input type="range" id="score24" name="score24" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value24">0</span>
+        
+        <label for="score25">I have a one-year supply of food each season: (up to 25 points)</label>
+        <input type="range" id="score25" name="score25" min="0" max="25" value="0" oninput="updateScore()"> <span class="slider-value" id="value25">0</span>
+        
+        <label for="score26">I have a three-quarters supply of food each season: (up to 20 points)</label>
+        <input type="range" id="score26" name="score26" min="0" max="20" value="0" oninput="updateScore()"> <span class="slider-value" id="value26">0</span>
+        
+        <label for="score27">I have a half-year supply of food each season: (up to 15 points)</label>
+        <input type="range" id="score27" name="score27" min="0" max="15" value="0" oninput="updateScore()"> <span class="slider-value" id="value27">0</span>
+        
+        <label for="score28">I have a quarter-year supply of food each season: (up to 10 points)</label>
+        <input type="range" id="score28" name="score28" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value28">0</span>
+        
+        <label for="score29">I can lactoferment food: (up to 5 points)</label>
+        <input type="range" id="score29" name="score29" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value29">0</span>
+        
+        <label for="score30">I can dry or dehydrate food: (up to 5 points)</label>
+        <input type="range" id="score30" name="score30" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value30">0</span>
+        
+        <label for="score31">I can smoke and cure food: (up to 5 points)</label>
+        <input type="range" id="score31" name="score31" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value31">0</span>
+        
+        <label for="score32">I can slaughter and butcher animals: (up to 10 points)</label>
+        <input type="range" id="score32" name="score32" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value32">0</span>
+        
+        <label for="score33">I can plant a variety of food trees properly: (up to 30 points)</label>
+        <input type="range" id="score33" name="score33" min="0" max="30" value="0" oninput="updateScore()"> <span class="slider-value" id="value33">0</span>
+        
+        <label for="score34">I can propagate trees and other plants: (up to 30 points)</label>
+        <input type="range" id="score34" name="score34" min="0" max="30" value="0" oninput="updateScore()"> <span class="slider-value" id="value34">0</span>
+        
+        <label for="score35">I can raise seedlings and transplant well: (up to 100 points)</label>
+        <input type="range" id="score35" name="score35" min="0" max="100" value="0" oninput="updateScore()"> <span class="slider-value" id="value35">0</span>
+        
+        <label for="score36">I can keep a vegetable garden in good condition all growing season: (up to 100 points)</label>
+        <input type="range" id="score36" name="score36" min="0" max="100" value="0" oninput="updateScore()"> <span class="slider-value" id="value36">0</span>
+        
+        <label for="score37">I can save seed in a vegetable garden: (up to 5 points)</label>
+        <input type="range" id="score37" name="score37" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value37">0</span>
+        
+        <label for="score38">I can breed animals: (up to 5 points)</label>
+        <input type="range" id="score38" name="score38" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value38">0</span>
+        
+        <label for="score39">I can lamb/kid/birth animals: (up to 5 points)</label>
+        <input type="range" id="score39" name="score39" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value39">0</span>
+        
+        <label for="score40">I can shear, shoe, and perform various animal maintenance in general: (up to 5 points)</label>
+        <input type="range" id="score40" name="score40" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value40">0</span>
+    </div>
+
+    <div class="quiz-section">
+        <h2>Physical Health</h2>
+        <label for="score41">I can cook using local and seasonal ingredients: (up to 50 points)</label>
+        <input type="range" id="score41" name="score41" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value41">0</span>
+    
+        <label for="score42">I can make a variety of potent medicines: (up to 30 points)</label>
+        <input type="range" id="score42" name="score42" min="0" max="30" value="0" oninput="updateScore()"> <span class="slider-value" id="value42">0</span>
+    
+        <label for="score43">I can identify and treat various ailments with local medicine/approaches: (up to 30 points)</label>
+        <input type="range" id="score43" name="score43" min="0" max="30" value="0" oninput="updateScore()"> <span class="slider-value" id="value43">0</span>
+    
+        <label for="score44">I can treat someone for emergency/acute trauma if given the right tools, and I know how to use them (e.g., emergency medicine, including CPR): (up to 30 points)</label>
+        <input type="range" id="score44" name="score44" min="0" max="30" value="0" oninput="updateScore()"> <span class="slider-value" id="value44">0</span>
+    
+        <label for="score45">I am currently in good physical health: (up to 250 points)</label>
+        <input type="range" id="score45" name="score45" min="0" max="250" value="0" oninput="updateScore()"> <span class="slider-value" id="value45">0</span>
+    
+        <label for="score46">I am likely to have a long life ahead of me: (up to 50 points)</label>
+        <input type="range" id="score46" name="score46" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value46">0</span>
+    
+        <label for="score47">I am not addicted to any foods or drugs: (up to 250 points)</label>
+        <input type="range" id="score47" name="score47" min="0" max="250" value="0" oninput="updateScore()"> <span class="slider-value" id="value47">0</span>
+    
+        <label for="score48">I know how to care holistically for my particular body type and mental habits, and maintain overall health to a high degree—I am healthy and know how to heal when sick: (up to 150 points)</label>
+        <input type="range" id="score48" name="score48" min="0" max="150" value="0" oninput="updateScore()"> <span class="slider-value" id="value48">0</span>
+    </div>
+
+    <div class="quiz-section">
+        <h2>Various Skills</h2>
+        <h3>Electrical</h3>
+        <label for="score49">I know basic wiring of switches, outlets, batteries, fencing, lighting, etc.: (up to 15 points)</label>
+        <input type="range" id="score49" name="score49" min="0" max="15" value="0" oninput="updateScore()"> <span class="slider-value" id="value49">0</span>
+    
+        <label for="score50">I know how to use a multimeter and charge vehicle batteries: (up to 15 points)</label>
+        <input type="range" id="score50" name="score50" min="0" max="15" value="0" oninput="updateScore()"> <span class="slider-value" id="value50">0</span>
+    
+        <label for="score51">I can set up a gravity-fed domestic water system without freeze problems: (up to 5 points)</label>
+        <input type="range" id="score51" name="score51" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value51">0</span>
+        
+        <h3>Plumbing</h3>
+        <label for="score52">I can capture and store roof water: (up to 10 points)</label>
+        <input type="range" id="score52" name="score52" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value52">0</span>
+    
+        <label for="score53">I know irrigation systems: (up to 5 points)</label>
+        <input type="range" id="score53" name="score53" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value53">0</span>
+    
+        <label for="score54">I can sweat copper and do basic indoor plumbing: (up to 5 points)</label>
+        <input type="range" id="score54" name="score54" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value54">0</span>
+    
+        <label for="score55">I can work with PEX tubing: (up to 5 points)</label>
+        <input type="range" id="score55" name="score55" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value55">0</span>
+
+        <h3>Crafting</h3>
+        <label for="score56">I can make and repair some clothes: (up to 10 points)</label>
+        <input type="range" id="score56" name="score56" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value56">0</span>
+    
+        <label for="score57">Ropework: I know basic home and farm knots and rigging (e.g., bowline, clove hitch, trucker’s hitch, fisherman’s knot): (up to 10 points)</label>
+        <input type="range" id="score57" name="score57" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value57">0</span>
+
+        <h3>Vehicles</h3>
+        <label for="score58">I can change a wheel: (up to 10 points)</label>
+        <input type="range" id="score58" name="score58" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value58">0</span>
+
+        <label for="score59">I can fix a flat tire: (up to 5 points)</label>
+        <input type="range" id="score59" name="score59" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value59">0</span>
+
+        <label for="score60">I can check and change oil: (up to 5 points)</label>
+        <input type="range" id="score60" name="score60" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value60">0</span>
+
+        <label for="score61">I can check and change other fluids: (up to 5 points)</label>
+        <input type="range" id="score61" name="score61" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value61">0</span>
+
+        <h3>Construction</h3>
+        <label for="score62">I can frame a wall efficiently: (up to 15 points)</label>
+        <input type="range" id="score62" name="score62" min="0" max="15" value="0" oninput="updateScore()"> <span class="slider-value" id="value62">0</span>
+
+        <label for="score63">I can frame a house: (up to 20 points)</label>
+        <input type="range" id="score63" name="score63" min="0" max="20" value="0" oninput="updateScore()"> <span class="slider-value" id="value63">0</span>
+
+        <label for="score64">I can use a full woodshop’s array of tools: (up to 25 points)</label>
+        <input type="range" id="score64" name="score64" min="0" max="25" value="0" oninput="updateScore()"> <span class="slider-value" id="value64">0</span>
+
+        <label for="score65">I can design, cut, and raise a timber frame: (up to 15 points)</label>
+        <input type="range" id="score65" name="score65" min="0" max="15" value="0" oninput="updateScore()"> <span class="slider-value" id="value65">0</span>
+
+        <label for="score66">I can do concrete work: forming and pouring: (up to 10 points)</label>
+        <input type="range" id="score66" name="score66" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value66">0</span>
+
+        <label for="score67">I can build a proper dry-stack stonewall of 4 feet in height: (up to 15 points)</label>
+        <input type="range" id="score67" name="score67" min="0" max="15" value="0" oninput="updateScore()"> <span class="slider-value" id="value67">0</span>
+
+        <label for="score68">I can weld: (up to 5 points)</label>
+        <input type="range" id="score68" name="score68" min="0" max="5" value="0" oninput="updateScore()"> <span class="slider-value" id="value68">0</span>
+
+        <label for="score69">I can repair and maintain buildings in general from rot, leakage, and mechanical problems: (up to 50 points)</label>
+        <input type="range" id="score69" name="score69" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value69">0</span>
+
+        <h3>Ecological Awareness</h3>
+        <label for="score70">I can identify 10 common medicinal plants in my immediate area and make medicine from them: (up to 25 points)</label>
+        <input type="range" id="score70" name="score70" min="0" max="25" value="0" oninput="updateScore()"> <span class="slider-value" id="value70">0</span>
+
+        <label for="score71">I can identify 10 edible plants in my immediate area and make food from them: (up to 25 points)</label>
+        <input type="range" id="score71" name="score71" min="0" max="25" value="0" oninput="updateScore()"> <span class="slider-value" id="value71">0</span>
+
+        <label for="score72">I can eat from and live in local wild areas for one week: (up to 50 points)</label>
+        <input type="range" id="score72" name="score72" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value72">0</span>
+
+        <label for="score73">I can eat from and live in local wild areas for a year: (up to 100 points)</label>
+        <input type="range" id="score73" name="score73" min="0" max="100" value="0" oninput="updateScore()"> <span class="slider-value" id="value73">0</span>
+
+        <label for="score74">I can eat from and live in local wild areas for a warm season: (up to 25 points)</label>
+        <input type="range" id="score74" name="score74" min="0" max="25" value="0" oninput="updateScore()"> <span class="slider-value" id="value74">0</span>
+
+        <label for="score75">I can stalk, hunt, trap effectively: (up to 30 points)</label>
+        <input type="range" id="score75" name="score75" min="0" max="30" value="0" oninput="updateScore()"> <span class="slider-value" id="value75">0</span>
+
+        <h3>Safety</h3>
+        <label for="score76">I am highly aware of my surroundings: (up to 200 points)</label>
+        <input type="range" id="score76" name="score76" min="0" max="200" value="0" oninput="updateScore()"> <span class="slider-value" id="value76">0</span>
+
+        <label for="score77">I can defend myself well from a physical threat: (up to 50 points)</label>
+        <input type="range" id="score77" name="score77" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value77">0</span>
+
+        <label for="score78">I don’t get injured often: (up to 45 points)</label>
+        <input type="range" id="score78" name="score78" min="0" max="45" value="0" oninput="updateScore()"> <span class="slider-value" id="value78">0</span>
+
+        <label for="score79">I am trained to help others in an emergency: (up to 50 points)</label>
+        <input type="range" id="score79" name="score79" min="0" max="50" value="0" oninput="updateScore()"> <span class="slider-value" id="value79">0</span>
+
+    <div class="result-section">
+        <p>Your Total Score: <span id="totalScore">0</span></p>
+        <button onclick="showResult()">Submit</button>
+        <p id="resultText"></p>
+    </div>
+
+    <script>
+        function updateScore() {
+            let totalScore = 0;
+            for (let i = 1; i <= 79; i++) {  // Updated to match the number of sliders added
+                let score = document.getElementById(`score${i}`);
+                if (score) {
+                    totalScore += parseInt(score.value);
+                    document.getElementById(`value${i}`).innerText = score.value;
+                }
+            }
+            document.getElementById("totalScore").innerText = totalScore;
+        }
+        
+        function showResult() {
+            let totalScore = document.getElementById("totalScore").innerText;
+            let result = "";
+
+            if (totalScore > 4000) {
+                result = "Likely adaptable to major change, likely an asset to any community, should likely be facilitating other people’s learning and sharing skills and resources.";
+            } else if (totalScore >= 3000) {
+                result = "Probably adaptable to changing conditions, a likely asset to most communities with much to share.";
+            } else if (totalScore >= 2000) {
+                result = "Adaptive patterns to work from, positioned to become highly resilient.";
+            } else if (totalScore >= 1000) {
+                result = "Some resilient tendencies to build on.";
+            } else {
+                result = "Average adaptability, major changes are needed for improvement.";
+            }
+
+            document.getElementById("resultText").innerText = result;
+        }
+    </script>
+</body>
+</html>
