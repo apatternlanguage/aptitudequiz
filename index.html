@@ -195,8 +195,8 @@
         <label for="score21">I can clean a chimney: (10 points)</label>
         <input type="range" id="score21" name="score21" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value21">0</span>
        
-        <label for="score21">I can install a woodstove and chimney: (10 points)</label>
-        <input type="range" id="score21" name="score21" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value21">0</span>
+        <label for="score80">I can install a woodstove and chimney: (10 points)</label>
+        <input type="range" id="score80" name="score80" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value80">0</span>
         
         <label for="score22">I can stack and cover wood very well: (10 points)</label>
         <input type="range" id="score22" name="score22" min="0" max="10" value="0" oninput="updateScore()"> <span class="slider-value" id="value22">0</span>
@@ -394,7 +394,7 @@
     <script>
         function updateScore() {
             let totalScore = 0;
-            for (let i = 1; i <= 79; i++) {  // Updated to match the number of sliders added
+            for (let i = 1; i <= 80; i++) {  // Updated to match the number of sliders added
                 let score = document.getElementById(`score${i}`);
                 if (score) {
                     totalScore += parseInt(score.value);
